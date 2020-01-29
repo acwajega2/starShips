@@ -1,7 +1,8 @@
 
 import React from 'react'
-import { Layout, Menu,PageHeader  } from 'antd';
+import { Layout, Menu,PageHeader,Button  } from 'antd';
 import { StarShipConsumer } from '../components/Context';
+import SocialButton from '../components/SocialButton';
 
 const { Header, Content, Footer } = Layout;
 const CustomLayout = (props) =>{
@@ -9,20 +10,37 @@ const CustomLayout = (props) =>{
       <StarShipConsumer>
       {value =>{
         const {nextPage,prevPage,homePage} = value
+        const handleSocialLogin = (user) => {
+          console.log(user)
+        }
+         
+        const handleSocialLoginFailure = (err) => {
+          console.error(err)
+        }
 
         return(
           <Layout>
     <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
       <div className="logo" />
+      
       <Menu
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['1']}
         style={{ lineHeight: '64px' }}
       >
+        
         <Menu.Item key="1" onClick={homePage}>Home </Menu.Item>
         <Menu.Item key="2" onClick={prevPage}>Previous Page</Menu.Item>
         <Menu.Item key="3" onClick={nextPage}>Next Page</Menu.Item>
+        <Menu.Item ><SocialButton
+      provider='facebook'
+      appId='692907114576533'
+      onLoginSuccess={handleSocialLogin}
+      onLoginFailure={handleSocialLoginFailure}
+    >
+      Login with Facebook
+    </SocialButton></Menu.Item>
       </Menu>
     </Header>
     <PageHeader
