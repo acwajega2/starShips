@@ -20,7 +20,7 @@ const CustomLayout = (props) =>{
         defaultSelectedKeys={['1']}
         style={{ lineHeight: '64px' }}
       >
-        <Menu.Item key="1" onClick={homePage}>Home SSS</Menu.Item>
+        <Menu.Item key="1" onClick={homePage}>Home </Menu.Item>
         <Menu.Item key="2" onClick={prevPage}>Previous Page</Menu.Item>
         <Menu.Item key="3" onClick={nextPage}>Next Page</Menu.Item>
       </Menu>
