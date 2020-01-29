@@ -170,8 +170,7 @@ render(){
         showMessage :this.showMessage,
         nextPage : this.nextPage,
         prevPage : this.prevPage,
-        homePage : this.homePage,
-        
+        homePage : this.homePage,        
         }}>
              {this.props.children}
         </StarShipContext.Provider>
