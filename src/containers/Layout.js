@@ -1,8 +1,10 @@
 
 import React from 'react'
-import { Layout, Menu,PageHeader,Button  } from 'antd';
+import { Layout, Menu,PageHeader,Button,Icon   } from 'antd';
 import { StarShipConsumer } from '../components/Context';
-import SocialButton from '../components/SocialButton';
+import SocialLabel from '../components/SocialLabel'
+import SocialButton from '../components/SocialButton'
+const { SubMenu } = Menu;
 
 const { Header, Content, Footer } = Layout;
 const CustomLayout = (props) =>{
@@ -20,28 +22,68 @@ const CustomLayout = (props) =>{
 
         return(
           <Layout>
+            
     <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-      <div className="logo" />
       
-      <Menu
-        theme="dark"
+      
+      <div className="logo" />  
+      
+     
+      <Menu  theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['1']}
-        style={{ lineHeight: '64px' }}
-      >
+        style={{ lineHeight: '64px' , color: "#FFFFFF"}}>
+        <Menu.Item key="home" onClick={homePage}>
+          <Icon type="home" />
+          Home
+        </Menu.Item>
+
+        <Menu.Item key="arrow-left" onClick={prevPage}>
+          <Icon type="arrow-left" />
+          Previous Page
+        </Menu.Item>
+
+        <Menu.Item key="arrow-right" onClick={nextPage}>
+          <Icon type="arrow-right" />
+          Next Page
+        </Menu.Item>
         
-        <Menu.Item key="1" onClick={homePage}>Home </Menu.Item>
-        <Menu.Item key="2" onClick={prevPage}>Previous Page</Menu.Item>
-        <Menu.Item key="3" onClick={nextPage}>Next Page</Menu.Item>
-        <Menu.Item ><SocialButton
-      provider='facebook'
-      appId='692907114576533'
-      onLoginSuccess={handleSocialLogin}
-      onLoginFailure={handleSocialLoginFailure}
-    >
-      Login with Facebook
-    </SocialButton></Menu.Item>
+        <SubMenu
+          title={
+            <span className="submenu-title-wrapper">
+              <Icon type="user" />
+              Social Login
+            </span>
+          }
+        >
+          <Menu.ItemGroup >
+            <Menu.Item>
+            <SocialLabel
+          provider='facebook'
+          appId='692907114576533'
+          onLoginSuccess={handleSocialLogin}
+          onLoginFailure={handleSocialLoginFailure}>
+           <Icon type="facebook" />Facebook
+          </SocialLabel>
+
+            </Menu.Item>
+          
+            
+            <Menu.Item key="setting:2" disabled><Icon type="google" />Google</Menu.Item>
+            <Menu.Item key="setting:3" disabled><Icon type="github" />GitHub</Menu.Item>
+          </Menu.ItemGroup>
+         
+        </SubMenu>
+        <Menu.Item key="alipay">
+        <Icon type="bell" />
+          
+            Notifications
+      
+        </Menu.Item>
       </Menu>
+   
+      
+
     </Header>
     <PageHeader
     style={{
@@ -51,6 +93,7 @@ const CustomLayout = (props) =>{
     title="Titleggggggggg"
     subTitle="This is a subtitle"
   />
+  
     <Content style={{ padding: '0 50px', marginTop: 64 }}>
       
       <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>

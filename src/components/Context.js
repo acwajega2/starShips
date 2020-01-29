@@ -41,8 +41,8 @@ componentDidMount(){
     /* */
 
     //----> Getting thr starShips on Component Mounting
-    this.getStarShips()
-   // this.initialiseStarShips()
+    //this.getStarShips()
+    this.initialiseStarShips()
 
     //IntialiseStarShips
 }
