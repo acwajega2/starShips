@@ -11,14 +11,8 @@ const CustomLayout = (props) =>{
     return(
       <StarShipConsumer>
       {value =>{
-        const {nextPage,prevPage,homePage} = value
-        const handleSocialLogin = (user) => {
-          console.log(user)
-        }
-         
-        const handleSocialLoginFailure = (err) => {
-          console.error(err)
-        }
+        const {nextPage,prevPage,homePage,currentUser,handleSocialLoginFailure,handleSocialLogin,hasLogedIn} = value
+        
 
         return(
           <Layout>
@@ -48,32 +42,75 @@ const CustomLayout = (props) =>{
           Next Page
         </Menu.Item>
         
-        <SubMenu
-          title={
-            <span className="submenu-title-wrapper">
-              <Icon type="user" />
-              Social Login
-            </span>
-          }
-        >
-          <Menu.ItemGroup >
-            <Menu.Item>
-            <SocialLabel
-          provider='facebook'
-          appId='692907114576533'
-          onLoginSuccess={handleSocialLogin}
-          onLoginFailure={handleSocialLoginFailure}>
-           <Icon type="facebook" />Facebook
-          </SocialLabel>
+       
+        { hasLogedIn ? 
+         <SubMenu
+         title={
+           <span className="submenu-title-wrapper">
+             <Icon type="user" />
+             Social Login
+           </span>
+         }
+       >
+         <Menu.ItemGroup >
+           <Menu.Item>
+           <SocialLabel
+         provider='facebook'
+         appId='692907114576533'
+         onLoginSuccess={handleSocialLogin}
+         onLoginFailure={handleSocialLoginFailure}>
+          <Icon type="facebook" />Facebook
+         </SocialLabel>
 
-            </Menu.Item>
-          
-            
-            <Menu.Item key="setting:2" disabled><Icon type="google" />Google</Menu.Item>
-            <Menu.Item key="setting:3" disabled><Icon type="github" />GitHub</Menu.Item>
-          </Menu.ItemGroup>
+           </Menu.Item>
          
-        </SubMenu>
+           
+           <Menu.Item key="setting:2" disabled><Icon type="google" />Google</Menu.Item>
+           <Menu.Item key="setting:3" disabled><Icon type="github" />GitHub</Menu.Item>
+         </Menu.ItemGroup>
+        
+       </SubMenu>
+
+        
+        
+        
+        
+        :
+        //------------------> when the user has logged in
+        <SubMenu
+         title={
+           <span className="submenu-title-wrapper">
+             <Icon type="user" />
+             {currentUser}
+           </span>
+         }
+       >
+         <Menu.ItemGroup >
+           <Menu.Item>
+           <SocialLabel
+         provider='facebook'
+         appId='692907114576533'
+         onLoginSuccess={handleSocialLogin}
+         onLoginFailure={handleSocialLoginFailure}>
+          <Icon type="facebook" />Facebook
+         </SocialLabel>
+
+           </Menu.Item>
+         
+           
+           <Menu.Item key="setting:2" disabled><Icon type="google" />Google</Menu.Item>
+           <Menu.Item key="setting:3" disabled><Icon type="github" />GitHub</Menu.Item>
+         </Menu.ItemGroup>
+        
+       </SubMenu>
+        
+        
+        }
+      
+
+
+
+        
         <Menu.Item key="alipay">
         <Icon type="bell" />
           

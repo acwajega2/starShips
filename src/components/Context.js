@@ -32,7 +32,9 @@ constructor (props){
         currentPage: 1,
         itemsPerPage: 3,
         totalItems : 0,
-        totalPages : 0
+        totalPages : 0,
+        hasLogedIn : false,
+        currentUser :[]
     }
 }
 //----End of state declaration
@@ -94,6 +96,43 @@ showMessage =() =>{
     console.log("someone clicked changePage")
 
 }
+
+//------> Handle Social Login Success
+handleSocialLogin =(user) => {
+
+    this.setState(()=>{
+        return{
+            hasLogedIn: true,
+            user : user.profile,
+            currentUser : user.profile.name
+
+        }
+
+    })
+
+}
+
+
+//--------
+
+
+
+//---------> Handle Social Login Failure
+handleSocialLoginFailure =() =>{
+    this.setState(()=>{
+        return{
+            hasLogedIn: false,
+            user : []
+
+        }
+
+    })
+
+}
+
+
+
+//--------
 
 
 //-------->  Changing a page-----
@@ -170,7 +209,9 @@ render(){
         showMessage :this.showMessage,
         nextPage : this.nextPage,
         prevPage : this.prevPage,
-        homePage : this.homePage,        
+        homePage : this.homePage,    
+        handleSocialLogin : this.handleSocialLogin,
+        handleSocialLoginFailure: this.handleSocialLoginFailure    
         }}>
              {this.props.children}
         </StarShipContext.Provider>
