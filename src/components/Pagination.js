@@ -10,7 +10,6 @@ class XPagination extends Component {
         console.log(page)
 
         
-
         }
     render() {
         
@@ -24,8 +23,6 @@ class XPagination extends Component {
                     for (let i = 1; i <= Math.ceil(starShips.length / itemsPerPage); i++) {
                         pageNumbers.push(i);
                       }
-                      
-
                       
 
                       

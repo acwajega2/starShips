@@ -1,0 +1,167 @@
+exports[`Testing the StarShip Component Matches the previous snap shot 1`] = `
+<div
+  className="mx-auto ">
+  <div
+    className="ant-card text-left ant-card-bordered ant-card-hoverable">
+    <div
+      className="ant-card-head"
+      style={Object {}}>
+      <div
+        className="ant-card-head-wrapper">
+        <div
+          className="ant-card-head-title">
+          shipA
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-card-body"
+      style={Object {}}>
+      <p>
+        Crew : 
+        23
+      </p>
+      <p>
+        Passengers : 
+        10
+      </p>
+      <p>
+        Hyperdrive Class :
+        <div
+          className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default">
+          <div>
+            <div
+              className="ant-progress-outer">
+              <div
+                className="ant-progress-inner">
+                <div
+                  className="ant-progress-bg"
+                  style={
+                    Object {
+                      "background": undefined,
+                      "borderRadius": "",
+                      "height": 8,
+                      "width": "40%",
+                    }
+                  } />
+              </div>
+            </div>
+          </div>
+        </div>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Testing the StarShip Component Should Render Properly 1`] = `
+<div
+  className="mx-auto ">
+  <div
+    className="ant-card text-left ant-card-bordered ant-card-hoverable">
+    <div
+      className="ant-card-head"
+      style={Object {}}>
+      <div
+        className="ant-card-head-wrapper">
+        <div
+          className="ant-card-head-title">
+          shipA
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-card-body"
+      style={Object {}}>
+      <p>
+        Crew : 
+        23
+      </p>
+      <p>
+        Passengers : 
+        10
+      </p>
+      <p>
+        Hyperdrive Class :
+        <div
+          className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default">
+          <div>
+            <div
+              className="ant-progress-outer">
+              <div
+                className="ant-progress-inner">
+                <div
+                  className="ant-progress-bg"
+                  style={
+                    Object {
+                      "background": undefined,
+                      "borderRadius": "",
+                      "height": 8,
+                      "width": "40%",
+                    }
+                  } />
+              </div>
+            </div>
+          </div>
+        </div>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Testing the StarShip Component Should Run Properly 1`] = `
+<div
+  className="mx-auto ">
+  <div
+    className="ant-card text-left ant-card-bordered ant-card-hoverable">
+    <div
+      className="ant-card-head"
+      style={Object {}}>
+      <div
+        className="ant-card-head-wrapper">
+        <div
+          className="ant-card-head-title">
+          shipA
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-card-body"
+      style={Object {}}>
+      <p>
+        Crew : 
+        23
+      </p>
+      <p>
+        Passengers : 
+        10
+      </p>
+      <p>
+        Hyperdrive Class :
+        <div
+          className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default">
+          <div>
+            <div
+              className="ant-progress-outer">
+              <div
+                className="ant-progress-inner">
+                <div
+                  className="ant-progress-bg"
+                  style={
+                    Object {
+                      "background": undefined,
+                      "borderRadius": "",
+                      "height": 8,
+                      "width": "40%",
+                    }
+                  } />
+              </div>
+            </div>
+          </div>
+        </div>
+      </p>
+    </div>
+  </div>
+</div>
+`;

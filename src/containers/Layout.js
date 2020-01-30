@@ -3,7 +3,7 @@ import React from 'react'
 import { Layout, Menu,PageHeader,Button,Icon,Avatar   } from 'antd';
 import { StarShipConsumer } from '../components/Context';
 import SocialLabel from '../components/SocialLabel'
-import SocialButton from '../components/SocialButton'
+
 const { SubMenu } = Menu;
 
 const { Header, Content, Footer } = Layout;
@@ -76,8 +76,7 @@ const CustomLayout = (props) =>{
         
        </SubMenu>
 
-               
-        
+                      
         
         :
         //------------------> when the user has logged in
