@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Layout, Menu,PageHeader,Button,Icon   } from 'antd';
+import { Layout, Menu,PageHeader,Button,Icon,Avatar   } from 'antd';
 import { StarShipConsumer } from '../components/Context';
 import SocialLabel from '../components/SocialLabel'
 import SocialButton from '../components/SocialButton'
