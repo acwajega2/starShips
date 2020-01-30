@@ -11,7 +11,7 @@ The Project souce code is at: https://github.com/acwajega2/starships
   2. Browse to your project folder and run the following command:
      ### `npm install`
 
-# Available Scripts
+## Available Scripts
 
 In the project directory, you can run:
 ### `npm start`
