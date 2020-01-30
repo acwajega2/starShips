@@ -71,8 +71,7 @@ const CustomLayout = (props) =>{
         
        </SubMenu>
 
-        
-        
+               
         
         
         :
@@ -80,8 +79,8 @@ const CustomLayout = (props) =>{
         <SubMenu
          title={
            <span className="submenu-title-wrapper">
-             <Icon type="user" />
-             {currentUser}
+             <Avatar src={currentUser.profilePicURL} />
+             {currentUser.name}
            </span>
          }
        >
