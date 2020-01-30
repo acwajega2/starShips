@@ -100,6 +100,8 @@ showMessage =() =>{
 //------> Handle Social Login Success
 handleSocialLogin =(user) => {
 
+    console.log(user.profile)
+
     this.setState(()=>{
         return{
             hasLogedIn: true,
@@ -118,7 +120,7 @@ handleSocialLogin =(user) => {
 
 
 //---------> Handle Social Login Failure
-handleSocialLoginFailure =() =>{
+handleSocialLoginFailure =(err) =>{
     this.setState(()=>{
         return{
             hasLogedIn: false,
