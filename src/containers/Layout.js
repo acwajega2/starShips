@@ -85,20 +85,9 @@ const CustomLayout = (props) =>{
          }
        >
          <Menu.ItemGroup >
-           <Menu.Item>
-           <SocialLabel
-         provider='facebook'
-         appId='692907114576533'
-         onLoginSuccess={handleSocialLogin}
-         onLoginFailure={handleSocialLoginFailure}>
-          <Icon type="facebook" />Facebook
-         </SocialLabel>
-
-           </Menu.Item>
-         
-           
-           <Menu.Item key="setting:2" disabled><Icon type="google" />Google</Menu.Item>
-           <Menu.Item key="setting:3" disabled><Icon type="github" />GitHub</Menu.Item>
+                 
+           <Menu.Item key="setting:2" ><Icon type="setting" />Settings</Menu.Item>
+           <Menu.Item key="setting:3" ><Icon type="logout" />Log Out</Menu.Item>
          </Menu.ItemGroup>
         
        </SubMenu>
