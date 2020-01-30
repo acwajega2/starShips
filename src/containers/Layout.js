@@ -41,6 +41,11 @@ const CustomLayout = (props) =>{
           <Icon type="arrow-right" />
           Next Page
         </Menu.Item>
+                
+        <Menu.Item key="alipay">
+        <Icon type="bars" />         
+      
+        </Menu.Item>
         
        
         { hasLogedIn == false ? 
@@ -99,12 +104,7 @@ const CustomLayout = (props) =>{
 
 
         
-        <Menu.Item key="alipay">
-        <Icon type="bell" />
-          
-            Notifications
-      
-        </Menu.Item>
+        
       </Menu>
    
       
