@@ -35,11 +35,11 @@ In this Project, I used the following 3rd party component libraries
 
 ## Testing
 I used the enzyme library for most of the unit tests
-https://airbnb.io/enzyme/
-In the project directory, you can run:
+ ### https://airbnb.io/enzyme/
+To perform the required tests, you can run:
 ### `npm test`
 
-to perform the required tests
+
 
 
 
