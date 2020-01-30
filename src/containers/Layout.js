@@ -43,7 +43,7 @@ const CustomLayout = (props) =>{
         </Menu.Item>
         
        
-        { hasLogedIn ? 
+        { hasLogedIn == false ? 
          <SubMenu
          title={
            <span className="submenu-title-wrapper">
