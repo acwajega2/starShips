@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {StarShipConsumer} from './Context'
-import { Card, Icon, Avatar,Progress  } from 'antd';
+import { Card, Icon, Avatar, Progress } from 'antd';
+import CapitalizedText from "./CapitalizedText";
+
 
 class StarShip extends Component {
     render() {
@@ -13,7 +15,7 @@ class StarShip extends Component {
                     {value =>{
                         return(
                             <Card hoverable  bordered className="text-left"
-                            title={name}>
+                                title={<CapitalizedText text={name}/>}>
                                 <p>{"Crew : "}{ crew == 0 ? "None" :crew}</p>
                     <p>{"Passengers : "}{ passengers == 0 ? "None" :passengers}</p>
                                 <p>{"Hyperdrive Class :" }

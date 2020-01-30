@@ -1,7 +1,7 @@
 const Data = {
     response :[
         {
-            name: "Ship A",
+            name: "sship A",
             crew : 3,
             passengers : 2000,
             hyperdrive_rating : 1.0
