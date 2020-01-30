@@ -34,7 +34,8 @@ constructor (props){
         totalItems : 0,
         totalPages : 0,
         hasLogedIn : false,
-        currentUser :[]
+        currentUser: {}
+        
     }
 }
 //----End of state declaration
@@ -106,7 +107,7 @@ handleSocialLogin =(user) => {
         return{
             hasLogedIn: true,
             user : user.profile,
-            currentUser : user.profile.name
+            currentUser : user.profile
 
         }
 
