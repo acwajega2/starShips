@@ -11,7 +11,7 @@ const CustomLayout = (props) =>{
     return(
       <StarShipConsumer>
       {value =>{
-        const {nextPage,prevPage,homePage,currentUser,handleSocialLoginFailure,handleSocialLogin,hasLogedIn} = value
+        const {nextPage_link,prevPage_link,homePage,currentUser,handleSocialLoginFailure,handleSocialLogin,hasLogedIn} = value
         
 
         return(
@@ -32,12 +32,12 @@ const CustomLayout = (props) =>{
           Home
         </Menu.Item>
 
-        <Menu.Item key="arrow-left" onClick={prevPage}>
+        <Menu.Item key="arrow-left" onClick={prevPage_link}>
           <Icon type="arrow-left" />
           Previous Page
         </Menu.Item>
 
-        <Menu.Item key="arrow-right" onClick={nextPage}>
+        <Menu.Item key="arrow-right" onClick={nextPage_link}>
           <Icon type="arrow-right" />
           Next Page
         </Menu.Item>

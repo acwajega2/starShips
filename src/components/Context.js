@@ -34,7 +34,9 @@ constructor (props){
         totalItems : 0,
         totalPages : 0,
         hasLogedIn : false,
-        currentUser: {}
+        currentUser: {},
+        nextPage_Url: "",
+        prevPage_Url: ""
         
     }
 }
@@ -74,6 +76,11 @@ initialiseStarShips = () =>{
     
   }
 
+
+   
+    
+    
+
 //-------> Get StarShips function
 getStarShips = () =>{
     //----> we shall use axios to perform a get request and it will the return a promise
@@ -83,8 +90,11 @@ getStarShips = () =>{
         //----> Setting the starShip property of the starte
         this.setState(() =>{
             return {
-                starShips :res.data.results,
+                starShips: res.data.results,
+                nextPage_Url: res.data.next,
+                prevPage_Url:res.data.previous,
                 totalItems: res.data.results.length,
+                itemsPerPage: res.data.results.length,
                 totalPages : Math.floor(res.data.results.length / this.state.itemsPerPage)
             }
         })
@@ -92,7 +102,61 @@ getStarShips = () =>{
     })
 }
 
+    
+//---------Function to navigate to the next webpage
+    
+    nextPage_link = () => {
 
+        if (this.state.nextPage_Url !== null) {
+            axios.get(this.state.nextPage_Url)
+            .then(res => {
+                console.log(res.data.results)
+                //----> Setting the starShip property of the starte
+                this.setState(() =>{
+                    return {
+                        starShips: res.data.results,
+                        nextPage_Url: res.data.next,
+                        prevPage_Url: res.data.previous,
+                        itemsPerPage: res.data.results.length,
+                        totalItems: res.data.results.length,
+                        totalPages : Math.floor(res.data.results.length / this.state.itemsPerPage)
+                    }
+                })
+        
+            })
+
+        }
+    
+}
+
+    
+//-------------------End of Next webpage
+
+    
+//-----------------Navigating to the previous page
+    prevPage_link = () => {
+        if (this.state.prevPage_Url !== null) {
+            axios.get(this.state.prevPage_Url)
+            .then(res => {
+                console.log(res.data.results)
+                //----> Setting the starShip property of the starte
+                this.setState(() =>{
+                    return {
+                        starShips: res.data.results,
+                        nextPage_Url: res.data.next,
+                        prevPage_Url:res.data.previous,
+                        totalItems: res.data.results.length,
+                        itemsPerPage: res.data.results.length,
+                        totalPages : Math.floor(res.data.results.length / this.state.itemsPerPage)
+                    }
+                })
+        
+            })
+
+        }
+        
+    }
+//--------------------End of Previous Page
 showMessage =() =>{
     console.log("someone clicked changePage")
 
@@ -153,7 +217,7 @@ changePage =(page) =>{
 
 //------> NextPage 
 nextPage = () =>{
-       this.state.currentPage != this.state.totalPages + 1?
+       this.state.currentPage !== this.state.totalPages + 1?
        this.setState( () =>{      
         return {
            currentPage : Number(this.state.currentPage) + 1,          
@@ -173,7 +237,7 @@ nextPage = () =>{
 
 //------> Previous Page
 prevPage = () =>{
-    this.state.currentPage != 1?
+    this.state.currentPage !== 1?
     this.setState( () =>{   
      return {
         currentPage : Number(this.state.currentPage) - 1,       
@@ -214,7 +278,10 @@ render(){
         prevPage : this.prevPage,
         homePage : this.homePage,    
         handleSocialLogin : this.handleSocialLogin,
-        handleSocialLoginFailure: this.handleSocialLoginFailure    
+            handleSocialLoginFailure: this.handleSocialLoginFailure,
+            prevPage_link: this.prevPage_link,
+            nextPage_link : this.nextPage_link
+        
         }}>
              {this.props.children}
         </StarShipContext.Provider>
